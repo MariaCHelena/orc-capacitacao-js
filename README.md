@@ -6,6 +6,6 @@ var seuNome = ""; //Aqui você deve atribuir seu nome a variável
 console.log("Olá, ", seuNome, "!");
 
 Checklist do exercício:
-- [] Abrir uma página web
-- [] Inspecionar página e abrir o console
-- [] Digitar o comando no console e apertar enter
+- [ ] Abrir uma página web
+- [ ] Inspecionar página e abrir o console
+- [ ] Digitar o comando no console e apertar enter
