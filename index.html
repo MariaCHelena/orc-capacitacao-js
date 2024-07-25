@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2 - Exercício 1</title>
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <h1>Estruturas de Repetição</h1>
+  <p>Você deverá uma função chamada "estrutura de repetição" dentro do arquivo script.js. Essa função deverá receber um atributo de index, que será a quantidade de vezes que o loop será repetido.</p>
+  <p>Esse loop deverá performar uma função chamada "acao", que receberá o índice atual da estrutura de repetição.</p>
+  <p>Quando terminar o código, você pode conferir se tudo está correto abrindo o arquivo index.html e clicando no botão da tela.</p>
+  <p>O botão deverá adicionar novos quadrados com base na quantidade que o usuário informar no prompt.</p>
+  <br>
+  <h3>Resultado:</h3>
+  <div id="modList" style="display: flex; gap: 5px; margin-bottom: 20px;">
+    <div id="mod" style="width: 20px; height: 20px; background-color: blueviolet; text-align: center; color: white;"></div>
+  </div>
+  <button id="but">
+    Clique
+  </button>
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <h3>Dicas:</h3>
+  <ul>
+    <li>A função "acao" já está definida no código, basta chamá-la dentro do loop com os atributos corretos.</li>
+  </ul>
+
+  <br>
+  <br>
+
+  <h3>Links úteis:</h3>
+  <strong>Estruturas de repetição:</strong>
+  <div>
+    <a href="https://www.w3schools.com/js/js_loop_for.asp" target="_blank">Loop for</a>
+  </div>
+  <a href="https://www.w3schools.com/js/js_loop_while.asp" target="_blank">Loop while</a>
+  <br>
+  <br>
+  <strong>Funções:</strong>
+  <br>
+  <a href="https://www.w3schools.com/js/js_functions.asp" target="_blank">Funções</a>
+
+
+
+  <script>
+    // Esse é o código de verificação do exercício, o seu código deve ficar no arquivo 'script.js'
+
+    const modList = window.document.getElementById("modList");
+    const modObj = window.document.getElementById("mod");
+    const button = window.document.getElementById("but");
+
+    const acao = (text) => {
+      const node = document.createElement("span");
+      const textnode = document.createTextNode(text);
+      node.appendChild(textnode);
+      const cloneNode = modObj.cloneNode(true);
+      modList.appendChild(cloneNode);
+      cloneNode.appendChild(node);
+    }
+
+    button.addEventListener("click", () => {
+      const idx = prompt("Digite um número");
+      estruturaDeRepeticao(idx);
+    })
+  </script>
+</body>
+</html>
