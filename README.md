@@ -34,14 +34,14 @@ Os exercícios estão dividos nos seguintes módulos:
 
 Módulo 1: O que é JavaScript
 Exercícios:
-* Executar um comando no console do navegador
-* Criar e linkar um arquivo de javascript em um documento html
+* [Executar um comando no console do navegador](https://github.com/MariaCHelena/orc-capacitacao-js/tree/modulo-1-exercicio-1)
+* [Criar e linkar um arquivo de javascript em um documento html](https://github.com/MariaCHelena/orc-capacitacao-js/tree/modulo-1-exercicio-2)
 
 Módulo 2: Sintaxe
 Exercícios:
-* Exercício com laço de repetição
-* Exercício com estruturas condicionais
-* Exercício com array
+* [Exercício com laço de repetição](https://github.com/MariaCHelena/orc-capacitacao-js/tree/modulo-2-exercicio-1)
+* [Exercício com estruturas condicionais](https://github.com/MariaCHelena/orc-capacitacao-js/tree/modulo-2-exercicio-2)
+* [Exercício com array](https://github.com/MariaCHelena/orc-capacitacao-js/tree/modulo-2-exercicio-3)
 
 Módulo 3: Interação com o DOM
 Exercícios:
