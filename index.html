@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 2 - Módulo 2</title>
+</head>
+<body>
+  <h1>Estruturas condicionais</h1>
+  <p>Analise os códigos abaixo e responda qual será a saída de cada um desses códigos.</p>
+  <div>
+    <div class="box-codigo">
+      <h3>Seção 1</h3>
+      <div>
+        const arrayElementos = [0, 1, 2, 3, 5];
+        <br>
+        for (let index = 0; index < arrayElementos.length; index++) {
+          <br>
+          &emsp;if(index !== arrayElementos[index]){
+            <br>
+            &emsp;&emsp;console.log(arrayElementos[index]);
+            <br>
+            &emsp;}
+          <br>
+        }
+      </div>
+      <input type="text" placeholder="Digite o retorno do código acima" id="resposta1" style="margin-top: 1rem; width: 25rem;"/>
+    </div>
+    <hr>
+    <div class="box-codigo">
+      <h3>Seção 2</h3>
+      <div>
+        let x = 0;<br>
+        const y = 10;<br>
+        do {<br>
+        &emsp;if(x == 0){<br>
+        &emsp;&emsp;x = y * 2;<br>
+        &emsp;} else if (x >= y) {<br>
+        &emsp;&emsp;x -= y / 4;<br>
+        &emsp;} else {<br>
+        &emsp;&emsp;console.log("O valor de x é ", x);<br>
+        &emsp;&emsp;break;<br>
+        &emsp;}<br>
+        } while (true);
+      </div>
+      <input type="text" placeholder="Digite o retorno do código acima" id="resposta2" style="margin-top: 1rem; width: 25rem;" />
+    </div>
+    <hr>
+    <div class="box-codigo">
+      <h3>Seção 3</h3>
+      <div>
+        const arrayElementos = ["Banana", "Morango", "Maçã", "Uva"];<br>
+        let frutaEscolhida;<br>
+        for (let index = 0; index < 2; index++) {<br>
+        &emsp;frutaEscolhida = arrayElementos[index];<br>
+        }<br>
+        switch (frutaEscolhida) {<br>
+        &emsp;case "Banana":<br>
+        &emsp;&emsp;console.log("Bolo de banana");<br>
+        &emsp;break;<br>
+        &emsp;case "Morango":<br>
+        &emsp;&emsp;console.log("Vitamina de morango")<br>
+        &emsp;break;<br>
+        &emsp;case "Maçã":<br>
+        &emsp;&emsp;console.log("Torta de maçã")<br>
+        &emsp;break;<br>
+        &emsp;case "Uva":<br>
+        &emsp;&emsp;console.log("Suco de uva")<br>
+        &emsp;break;<br>
+        &emsp;default:<br>
+        &emsp;&emsp;console.log("Nenhuma fruta foi escolhida");<br>
+        &emsp;break;<br>
+        }
+      </div>
+      <input type="text" placeholder="Digite o retorno do código acima" id="resposta3" style="margin-top: 1rem; width: 25rem;" />
+    </div>
+  </div>
+  <hr>
+  <button id="submit" style="margin-top: 1rem;">Enviar respostas</button>
+
+  <script>
+    const resposta1 = document.getElementById("resposta1");
+    const resposta2 = document.getElementById("resposta2");
+    const resposta3 = document.getElementById("resposta3");
+
+    const divs = document.getElementsByClassName("box-codigo");
+
+    const error = document.createElement("p");
+    const errorText = document.createTextNode("Resposta incorreta!");
+    error.style.color = 'red';
+    error.appendChild(errorText);
+
+    const acerto = document.createElement("p");
+    const acertoText = document.createTextNode("Resposta correta!");
+    acerto.style.color = 'green';
+    acerto.appendChild(acertoText);
+
+    const textoElemento = document.createElement("p");
+    const textoConteudo = document.createTextNode("");
+    textoElemento.appendChild(textoConteudo);
+
+    const but = document.getElementById("submit");
+
+    but.addEventListener("click", () => {
+      divs[0].append(textoElemento.cloneNode(true));
+      divs[1].append(textoElemento.cloneNode(true));
+      divs[2].append(textoElemento.cloneNode(true));
+
+      if(resposta1.value == 5){
+        divs[0].getElementsByTagName("p")[0].innerText = "Resposta certa!";
+        divs[0].getElementsByTagName("p")[0].style.color = "green";
+      } else {
+        divs[0].getElementsByTagName("p")[0].innerText = "Resposta errada!";
+        divs[0].getElementsByTagName("p")[0].style.color = "red";
+      }
+
+      if(parseFloat(resposta2.value.replace(",", ".")) == 7.5){
+        divs[1].getElementsByTagName("p")[0].innerText = "Resposta certa!";
+        divs[1].getElementsByTagName("p")[0].style.color = "green";
+      } else {
+        divs[1].getElementsByTagName("p")[0].innerText = "Resposta errada!";
+        divs[1].getElementsByTagName("p")[0].style.color = "red";
+      }
+
+      if(resposta3.value.toLowerCase().trim() == "torta de maçã"){
+        divs[2].getElementsByTagName("p")[0].innerText = "Resposta certa!";
+        divs[2].getElementsByTagName("p")[0].style.color = "green";
+      } else {
+        divs[2].getElementsByTagName("p")[0].innerText = "Resposta errada!";
+        divs[2].getElementsByTagName("p")[0].style.color = "red";
+      }
+    })
+
+  </script>
+</body>
+</html>
