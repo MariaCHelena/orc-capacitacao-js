@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 3 - Módulo 2</title>
+  <style>
+    div:nth-child(2n) {
+      background-color: lightgreen;
+    }
+
+    div:nth-child(2n + 1) {
+      background-color: lightcoral;
+    }
+  </style>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <h1>Arrays</h1>
+  <p>Foi definido o seguinte array para renderizar os elementos abaixo: </p>
+  <p>let arr = ["Escobar", "Gabs", "Rodrigo", "Willian", "Rikas", "Freire"]</p>
+  <p>Nesse exercício, você deverá criar duas funções dentro do arquivo "script.js":</p>
+  <ul>
+    <li>
+      <p>Uma função chamada excluirElemento, que deverá receber o array dos elementos e o item a ser excluído como parâmetro, e deverá retornar o array sem o elemento escolhido.</p>
+      <p>&emsp;A função excluirElemento será chamada quando o usuário clicar em cima de um dos cards abaixo, que chamará um prompt pedindo confirmação se o usuário deseja ou não excluir o elemento, e em caso afirmativo, o elemento será excluído do array.</p>
+    </li>
+    <li>
+      <p>Uma função chamada adicionarElemento, que deverá receber o array dos elementos e o item que será adicionado no array. Essa função não deverá retornar nada.</p>
+      <p>&emsp;A função adicionarElemento será chamada quando o usuário clicar no boão "adicionar elemento", que chamará um prompt pedindo pedindo que o usuário escreva um nome. A função irá adicionar ao array um novo elemento com o nome fornecido pelo usuário.</p>
+    </li>
+  </ul>
+
+  <h3>Cards dos elementos do array:</h3>
+
+  <section style="display: flex; gap: 10px;">
+
+  </section>
+
+  <button style="margin-top: 20px;" id="but">Adicionar Elemento</button>
+
+  <h3>Dicas:</h3>
+  <ul>
+    <li>As funções deverão ter somente as lógicas de inclusão e exclusão dos elementos, não é necessário se preocupar com a lógica de integração com o HTML.</li>
+    <li>A função excluirElemento e adicionarElemento devem receber arr (array de elementos) e item (item a ser excluído ou adicionado) nessa respectiva ordem.</li>
+  </ul>
+
+  <script>
+    // As funções do exercício deverão ser escritas dentro do arquivo "script.js"!!
+
+    let arr = ["Escobar", "Gabs", "Rodrigo", "Willian", "Rikas", "Freire"]
+
+    const section = window.document.getElementsByTagName("section");
+
+    const but = document.getElementById("but");
+
+    but.addEventListener("click", () => {
+      const nome = prompt("Digite o nome da pessoa que deseja adicionar")
+      adicionarElemento(arr, nome);
+      criarElementos();
+    })
+
+    const arrElemento = document.createElement("div");
+    arrElemento.style.width = '100px';
+    arrElemento.style.height = '100px';
+    arrElemento.style.textAlign = 'center';
+    arrElemento.style.lineHeight = '100px';
+    arrElemento.style.display = "block";
+
+
+    function criarElementos(){
+      section[0].innerHTML = "";
+      arr.forEach((item) => {
+        const aux = arrElemento.cloneNode(true);
+        aux.innerHTML = `<span>${item}</span>`;
+        aux.addEventListener('click', () => {
+          if(confirm(`Deseja apagar ${item} da lista?`))
+            arr = excluirElemento(arr, item);
+            criarElementos();
+        })
+        section[0].appendChild(aux);
+      })
+    }
+
+    criarElementos();
+  </script>
+</body>
+</html>
